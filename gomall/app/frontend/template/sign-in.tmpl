@@ -1,0 +1,33 @@
+{{define "sign-in"}}
+{{template "head" .}}
+    <div class="row justify-content-center">
+        <div class="col-1"></div>
+        <form method="post" class="col-6" action="/auth/login{{ if .next }}?next={{.next}} {{ end}}">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email {{template "required"}}</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password {{template "required"}}</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label" for="remember">remember me</label>
+                <a href="">Forget password?</a>
+            </div>
+            <div class="mb-3">
+                Don't have account, click here to <a href="/sign_up">Sign up</a>
+            </div>
+            <div class="mb-3">
+                Login With <a href="" style="color: black"><i class="fa-brands fa-square-github"
+                                                              style="font-size: 2rem"></i></a>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{{template "footed" .}}
+{{end}}

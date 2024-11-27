@@ -1,0 +1,29 @@
+{{define "sign-up"}}
+{{template "head" .}}
+    <div class="row justify-content-center">
+        <div class="col-1"></div>
+        <form method="post" class="col-6" action="/auth/register">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email {{template "required"}}</label>
+                <input type="email" name="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password {{template "required"}}</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="password-confirm" class="form-label">Password confirm {{template "required"}}</label>
+                <input type="password" class="form-control" id="password-confirm" name="password-confirm">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label" for="remember">remember me</label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+        </div>
+        </form>
+    </div>
+{{template "footed" .}}
+{{end}}
